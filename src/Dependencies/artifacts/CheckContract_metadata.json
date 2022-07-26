@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.15+commit.e14f2714"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/Dependencies/CheckContract.sol": "CheckContract"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"src/Dependencies/CheckContract.sol": {
+			"keccak256": "0xf73a194baf3830b14189e45ab0bf1ec6c9f21a4d71cc74b87733243c88767c2b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f48de7a9ae03c3e4a026a32a59d7222a23318fbb2fb721e336f633ccaa098a24",
+				"dweb:/ipfs/QmVUkyjECZMr7CX5qE2fEqBbq9sk244vSf5WZFocowXmS6"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,617 @@
+{
+	"compiler": {
+		"version": "0.8.15+commit.e14f2714"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_borrowerOperationsAddress",
+						"type": "address"
+					}
+				],
+				"name": "BorrowerOperationsAddressChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_id",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_NICR",
+						"type": "uint256"
+					}
+				],
+				"name": "NodeAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_id",
+						"type": "address"
+					}
+				],
+				"name": "NodeRemoved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_troveManagerAddress",
+						"type": "address"
+					}
+				],
+				"name": "TroveManagerAddressChanged",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "NAME",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "borrowerOperationsAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_id",
+						"type": "address"
+					}
+				],
+				"name": "contains",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "data",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "head",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "tail",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "maxSize",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "size",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_NICR",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_prevId",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_nextId",
+						"type": "address"
+					}
+				],
+				"name": "findInsertPosition",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getFirst",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getLast",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getMaxSize",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_id",
+						"type": "address"
+					}
+				],
+				"name": "getNext",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_id",
+						"type": "address"
+					}
+				],
+				"name": "getPrev",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getSize",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_id",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_NICR",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_prevId",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_nextId",
+						"type": "address"
+					}
+				],
+				"name": "insert",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "isEmpty",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "isFull",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "isOwner",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_id",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_newNICR",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_prevId",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_nextId",
+						"type": "address"
+					}
+				],
+				"name": "reInsert",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_id",
+						"type": "address"
+					}
+				],
+				"name": "remove",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_size",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_troveManagerAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_borrowerOperationsAddress",
+						"type": "address"
+					}
+				],
+				"name": "setParams",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "troveManager",
+				"outputs": [
+					{
+						"internalType": "contract ITroveManager",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_NICR",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_prevId",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_nextId",
+						"type": "address"
+					}
+				],
+				"name": "validInsertPosition",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"isOwner()": {
+					"details": "Returns true if the caller is the current owner."
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/UserListByCR.sol": "SortedTroves"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"src/Dependencies/CheckContract.sol": {
+			"keccak256": "0xf73a194baf3830b14189e45ab0bf1ec6c9f21a4d71cc74b87733243c88767c2b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f48de7a9ae03c3e4a026a32a59d7222a23318fbb2fb721e336f633ccaa098a24",
+				"dweb:/ipfs/QmVUkyjECZMr7CX5qE2fEqBbq9sk244vSf5WZFocowXmS6"
+			]
+		},
+		"src/Dependencies/IERC20.sol": {
+			"keccak256": "0x293b636495cfc780c7018848f38452d4a79da46b8b9e17ea94c51c991c0f7703",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://79d882ca2fdd075ae6cd846854f688385b16d1e17ad3dee9299a9c37c6b2ec5f",
+				"dweb:/ipfs/QmPRVB8bKk2XuVEjezrGpYGKzoorXh2uwFU1iRakb3y2WP"
+			]
+		},
+		"src/Dependencies/IERC2612.sol": {
+			"keccak256": "0xd509e8938fd857e8841d8ec41b90dcf1af7c7727d7e2cd403c9a6c2052b018eb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ad1a85de410adaff508bca799d69e8fc27282e45129f581d24d082d5f9686c11",
+				"dweb:/ipfs/QmdWUkLsns8tcyE8xy2JKPS4U4ymk9qukLTtUzDMNBGNhU"
+			]
+		},
+		"src/Dependencies/Ownable.sol": {
+			"keccak256": "0xa6239fdaf5e48fc18dfe9a344e84c7d3ae3dfdbd8a2d4b28aa6b2d573be13e87",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f090ddf42ebd42829024016e790cae9aa6a0f1ba92e3cc9b55ed41a55bce3eae",
+				"dweb:/ipfs/QmcZ8P2QDuDHd1WunptLJiEiVu2KGRF3zVkjZy88uFNmRp"
+			]
+		},
+		"src/Interfaces/IBorrowerOperations.sol": {
+			"keccak256": "0x49c5c034c82eeb1455a064760b9da51fe58504f4326f27ea52ffbbc41c1034ca",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e1fb203f51ce5238437ca91d639b900c9cc70b5525cbe2bd34ee6ccc6731c809",
+				"dweb:/ipfs/QmVwcBQzCFJo4aK27vAayY16eKKM6Tt7j5DXg7vx7nHFKy"
+			]
+		},
+		"src/Interfaces/ILQTYStaking.sol": {
+			"keccak256": "0x0bc40b2eb74275a3f998acab7c80a4c73484c61db1ece8fa7d789c86f74d2560",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f4acd94068ab769786b5089f51db102ffb17bda82ff1e6d393509087091b1a91",
+				"dweb:/ipfs/QmVKizxm4XpKdqCSmVEuzkKuHc5iKCQimbixW6QgBrBtP8"
+			]
+		},
+		"src/Interfaces/ILQTYToken.sol": {
+			"keccak256": "0xda73f0316b5f75e90e920abb7dd33cdf2d90c0cdda58a90e2316cf64ad34161e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://654cbf3b65f2afce6a2003eb132a539ec44dbd183313bb02cef2b0acee2ea371",
+				"dweb:/ipfs/QmRy3qMFZT3Kb684tha5VBCYcDPBb2RRVCSeobYSKYC6b1"
+			]
+		},
+		"src/Interfaces/ILUSDToken.sol": {
+			"keccak256": "0xedc66f4b7ead68bb9e73f46d9429476a2b2fddfe973a631e161a4ea86fb5c761",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5e7cd34ded4ed3e3239961e94ceccdd496516556f99d82cd19e0769fdcad08e0",
+				"dweb:/ipfs/QmPDsVCC1Y9J9MP9jo2xsTXN9mhGVP7Pft6vrMDctA3v61"
+			]
+		},
+		"src/Interfaces/ILiquityBase.sol": {
+			"keccak256": "0x2ef1add8ce0f4df9f2bf661d16471462f5645c445b7121bfac8a397342b98f49",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a59557f4eaae3e95d8afc89a4d58072f04808431195b2d6fbcfa54789905310a",
+				"dweb:/ipfs/QmVk5kH3Yx7UU7aZwBczqAQ8xh815eKLcd7Ajzojoot8Jd"
+			]
+		},
+		"src/Interfaces/IPriceFeed.sol": {
+			"keccak256": "0x155d26d852f852fd2c1985b6015e2f1a41dd3b2db69c2c234c27863db905d60a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f3fc5f369dbeee42fa1d8960edb8fb13d7fca01f066b30e2e02a94bec08d6155",
+				"dweb:/ipfs/QmZnCBFu5aAPsLpibuYuggwxMktWH7zCeHbCjiiW3jTqif"
+			]
+		},
+		"src/Interfaces/ISortedTroves.sol": {
+			"keccak256": "0x1fcd0ac4ffa560b28e2bf8ad2977068816e50a9356b6eb935186a688ba03d40f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a4b326310157e980d711bd7d790044eb6c3998e1071731a73ffc76e91d2ef85f",
+				"dweb:/ipfs/QmaHVdjGjUXREoUPi1hLSBRGfaBN3uxN677eb6z6QePrZm"
+			]
+		},
+		"src/Interfaces/IStabilityPool.sol": {
+			"keccak256": "0x31488b09d90a94961f73e021034339bea8ab5f6cb3f630a84bca2a328cff8b84",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://77e89495b62dfdb750992e285f936c6354015522cd5d25c600342836dd0dfb5d",
+				"dweb:/ipfs/QmWcGErf4ztNS28kqbXQ46aQ7nzyTR5r5WKd5LW75iip9v"
+			]
+		},
+		"src/Interfaces/ITroveManager.sol": {
+			"keccak256": "0x5a19566d16fcc760c88aa5b70a2cd53d6dfcf61082509fd8ee05c101da7673fd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://566ae376bb094498edf64da4b2efcddcbd4fc8adff80196da6aa5d385721e3d9",
+				"dweb:/ipfs/QmYk52JcGuS2qz4fdYKpL2NGGUtJKDCpTHVMAHN8j72239"
+			]
+		},
+		"src/UserListByCR.sol": {
+			"keccak256": "0x923aff76f26f94e690740e68a4eff533d768ebc31a52d09a13f71a6bda2f4d5f",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://ae11eeee1ccd0fa904c5db8eef22caaf4c306525e4b7e9e4f02f2d192ef5b0f5",
+				"dweb:/ipfs/QmNzTzuFygWuBERYkfZLt8jeNGnEiRdpYBGrkTsivujizA"
+			]
+		}
+	},
+	"version": 1
+}

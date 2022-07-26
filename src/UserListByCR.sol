@@ -4,10 +4,8 @@ pragma solidity ^0.8.13;
 import "./Interfaces/ISortedTroves.sol";
 import "./Interfaces/ITroveManager.sol";
 import "./Interfaces/IBorrowerOperations.sol";
-import "./Dependencies/SafeMath.sol";
 import "./Dependencies/Ownable.sol";
 import "./Dependencies/CheckContract.sol";
-import "./Dependencies/console.sol";
 
 /*
 * A sorted doubly linked list with nodes sorted in descending order.
@@ -43,8 +41,6 @@ import "./Dependencies/console.sol";
 * - Public functions with parameters have been made internal to save gas, and given an external wrapper function for external access
 */
 contract SortedTroves is Ownable, CheckContract, ISortedTroves {
-    using SafeMath for uint256;
-
     string constant public NAME = "SortedTroves";
 
     event TroveManagerAddressChanged(address _troveManagerAddress);
@@ -150,7 +146,7 @@ contract SortedTroves is Ownable, CheckContract, ISortedTroves {
             data.nodes[nextId].prevId = _id;
         }
 
-        data.size = data.size.add(1);
+        data.size += 1;
         emit NodeAdded(_id, _NICR);
     }
 
@@ -196,8 +192,8 @@ contract SortedTroves is Ownable, CheckContract, ISortedTroves {
         }
 
         delete data.nodes[_id];
-        data.size = data.size.sub(1);
-        NodeRemoved(_id);
+        data.size -= 1;
+        emit NodeRemoved(_id);
     }
 
     /*
