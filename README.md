@@ -19,3 +19,7 @@ in wherever you have your copy of this repository launch
 `forge test`
 
 Start hacking the contracts under `./src` and assure correctness with the related `testXY` functions of the auxilary contracts under `./test`.
+
+To get a simple interface for interaction Remix IDE is installed and served like this:
+`npm i -g @remix-project/remixd  &&  remixd -s .`
+Then you just select Workspace "localhost", see https://www.youtube.com/watch?v=VPrSnLdE-A0 for a detailed guide.
