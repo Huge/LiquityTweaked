@@ -10,6 +10,8 @@ Coverage/protection from redemption available. Also: redemption fee is awarded t
 
 Fees are distributed according to staked/locked troves, no house token.
 
+Self-liquidation contract available/integrated.
+
 ## SW development guide
 
 Run through https://github.com/foundry-rs/foundry#installation to setup the SDK.
